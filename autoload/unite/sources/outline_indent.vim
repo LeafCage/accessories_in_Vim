@@ -1,10 +1,10 @@
 "登録
-  function! unite#sources#indexindent#define()
+  function! unite#sources#outline_indent#define()
     return s:source
   endfunction
 
 "s:source
-  let s:source = {'name' : 'indexindent',
+  let s:source = {'name' : 'outline_indent',
                 \ }
 
 
