@@ -20,6 +20,6 @@ function! s:registerDeletedBuffer()
 "      call remove(g:registerDeletedBuffer,nowbuffer)
 "    endif
     "記録する：バッファのパス
-    call insert(g:registerDeletedBuffer,nowbuffer)
+    let g:registerDeletedBuffer=insert(g:registerDeletedBuffer,nowbuffer)[0:29]
   endif
 endfunction
