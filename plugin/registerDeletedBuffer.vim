@@ -15,10 +15,10 @@ function! s:registerDeletedBuffer()
       endif
     endfor
 
-    "TODO:以前のがあれば削除する
-"    if get(g:registerDeletedBuffer,nowbuffer,'') !=''
-"      call remove(g:registerDeletedBuffer,nowbuffer)
-"    endif
+    "以前のがあれば削除する
+    if get(g:registerDeletedBuffer,nowbuffer,'') !=''
+      call filter(g:registerDeletedBuffer,'v:val !~# nowbuffer')
+    endif
     "記録する：バッファのパス
     let g:registerDeletedBuffer=insert(g:registerDeletedBuffer,nowbuffer)[0:29]
   endif
