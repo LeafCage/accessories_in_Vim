@@ -1,10 +1,10 @@
 "“o˜^
-  function! unite#sources#registerDeletedBuffer#define()
+  function! unite#sources#buffer_deleted#define()
     return s:source
   endfunction
 
 "s:source
-  let s:source = {'name' : 'registerDeletedBuffer',
+  let s:source = {'name' : 'buffer_deleted',
                 \ }
 
 
@@ -22,7 +22,7 @@
     let completedSource = []
     let innerdict = { 'kind' : 'file'}
 
-    for item in g:registerDeletedBuffer
+    for item in g:unite_source_buffer_deleted_stack
       let innerdict['word'] = item
       let innerdict['action__path'] = item
       call add(completedSource , copy(innerdict) )
