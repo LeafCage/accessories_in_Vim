@@ -3,7 +3,7 @@
 au BufDelete * call <SID>buffer_deleted()
 
 let g:unite_source_buffer_deleted_stack =get(g:,'g:unite_source_buffer_deleted_stack',[])
-let g:unite_source_buffer_deleted_ignore_patterns=get(g:,'g:unite_source_buffer_deleted_ignore_patterns',['\[unite]','lingr-rooms','lingr-say',])
+let g:unite_source_buffer_deleted_ignore_patterns=get(g:,'g:unite_source_buffer_deleted_ignore_patterns',['\[unite]','lingr-rooms','lingr-say','\[vimshell]'])
 
 function! s:buffer_deleted()
   let nowbuffer =expand('%:p')
